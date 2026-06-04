@@ -82,7 +82,7 @@ export default function AddFoodPage() {
 
           {/* Ingredients Image */}
           <div>
-            <label className="block text-black font-medium mb-2">Ingredients</label>
+            <label className="block text-black font-medium mb-2">Food Image</label>
             <div className="border-2 border-dashed rounded-xl h-40 flex items-center justify-center text-gray-400 cursor-pointer hover:border-sky-400">
               <Camera size={36} />
             </div>
@@ -93,34 +93,8 @@ export default function AddFoodPage() {
 
           {/* Customs */}
           <div>
-            <label className="block text-black font-medium mb-4">Customs</label>
-
-            <div className="flex items-center gap-3 mb-4">
-              <input type="checkbox" defaultChecked />
-              <span className=" text-black">Available</span>
-            </div>
-
-            <div className="flex items-center gap-3 mb-4">
-              <input type="radio" name="type" />
-              <span className=" text-black">Vegetarian</span>
-            </div>
-
-            {/* Toggle */}
-            <div
-              onClick={() => setAvailable(!available)}
-              className={`w-14 h-7 flex items-center rounded-full cursor-pointer transition ${
-                available ? "bg-green-400" : "bg-gray-300"
-              }`}
-            >
-              <div
-                className={`w-6 h-6 bg-white rounded-full shadow transform transition ${
-                  available ? "translate-x-7" : "translate-x-1"
-                }`}
-              />
-            
-            </div>
-            <a href="/dashboard">
-            <div className="flex justify-center hover-black font-bold items-center w-40 h-10 bg-[#61A9E5] mt-3 rounded-xl">
+            <a href="/dashboard/menu">
+            <div className="mt-38 flex justify-center hover-black font-bold items-center w-40 h-10 bg-[#61A9E5] mt-3 rounded-xl">
                 <h1>Cancel</h1>
             </div>
             </a>

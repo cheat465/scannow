@@ -4,7 +4,7 @@ export default function Footer() {
       <div className="w-full flex flex-col md:flex-row items-start md:items-center justify-between gap-6 ">
         
         <div className="flex flex-col">
-          <img src="/logo/90r.png" className="w-25 opacity-70 mt-[37] mb-[-135]" />
+          <img src="/logo/90r.png" className="w-25 opacity-20 mt-[37] mb-[-50]" />
         </div>
 
         {/* <div className="flex flex-col space-y-2 ml-15 mt-30">
@@ -21,13 +21,13 @@ export default function Footer() {
         <img
           src="/logo/angkorwat.png"
           alt="Angkor Wat silhouette"
-          className="w-full opacity-70 max-w-xl mr-10 mb-[-32]"
+          className="w-full opacity-20 max-w-xl mr-[-18] mb-[-32]"
         />
 
         
 
         <div className="flex flex-col">
-          <img src="/logo/90l.png" className="w-25 opacity-70 mt-[37] mb-[-135]"  />
+          <img src="/logo/90l.png" className="w-25 opacity-20 mt-[37] mb-[-50]"  />
         </div>
       </div>
     </footer>

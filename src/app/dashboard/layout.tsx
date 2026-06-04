@@ -2,7 +2,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-// Added "Settings" to the imports below
+import { usePathname } from "next/navigation";
 import { LayoutDashboard, UtensilsCrossed, ShoppingBag, Settings } from "lucide-react";
 
 // --- 1. Define the NavItem component ---
@@ -12,6 +12,8 @@ interface NavItemProps {
   label: string;
   active?: boolean;
 }
+
+
 
 const NavItem = ({ href = "#", icon, label, active }: NavItemProps) => {
   return (
@@ -31,6 +33,7 @@ const NavItem = ({ href = "#", icon, label, active }: NavItemProps) => {
 
 // --- 2. Your DashboardLayout ---
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
+  const pathname = usePathname();
   return (
     <div className="flex min-h-screen bg-[#EFFFFF]">
       <aside className="w-64 bg-[#EFFFFF] border shadow-black shadow-xs text-slate-400 flex flex-col shrink-0">
@@ -50,17 +53,19 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
             href="/dashboard  "
             icon={<LayoutDashboard size={20} />}
             label="Dashboard"
-            active
+            active={pathname === "/dashboard"}
           />
           <NavItem
-            href="/dashboard/menu/food"
+            href="/dashboard/menu"
             icon={<UtensilsCrossed size={20} />}
             label="Menu"
+            active={pathname === "/dashboard/menu"}
           />
           <NavItem
-            href="/orders"
+            href="/dashboard/menu/order"
             icon={<ShoppingBag size={20} />}
             label="Orders"
+            active={pathname === "/dashboard/menu/order"}
           />
         </nav>
 

@@ -70,7 +70,7 @@ export default function Dashboard() {
               <Search
                 className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"
                 size={18}
-              />
+              />  
               <input
                 type="text"
                 placeholder="Search..."

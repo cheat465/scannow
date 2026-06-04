@@ -11,15 +11,14 @@ export default function WelcomePage() {
         <Navbar1 />
 
       {/* Logo Section */}
-      <div className="flex-1 flex items-center justify-center px-4 relative">
+      <div className="flex-1 flex items-center justify-center mt-[-70] px-4 relative">
         <div className="w-full max-w-sm mx-auto">
         <div className="flex flex-col items-center mb-8">
-        <img src="/logo/logo.png" alt="Logo" className="h-30 w-auto mb-3" />
-        <h1 className="text-2xl font-bold text-[#38B6FF]"></h1>
+        <img src="/logo/logo.png" alt="Logo" className="h-25 w-auto " />
       </div>
 
       {/* Welcome Card */}
-      <div className="bg-white w-full max-w-md rounded-lg shadow-md p-8 text-center border border-gray-300">
+      <div className="relative z-10 bg-white w-full max-w-md rounded-lg shadow-md p-8 text-center border border-gray-300">
         <h2 className="text-2xl font-bold text-gray-900 mb-4">Welcome, Ana!</h2>
         <p className="text-gray-600 mb-6">Your account is ready!</p>
 

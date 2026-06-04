@@ -9,7 +9,7 @@ const PricingPage = () => {
       <Navbar />
       
       <main className="flex-grow flex justify-center items-center py-16 px-4">
-        <div className="w-full max-w-md md:max-w-2xl lg:max-w-xl border border-[#38B6FF]/30 rounded-[30px] p-8 md:p-12 bg-white/50 backdrop-blur-sm shadow-sm">
+        <div className="relative z-10 w-full max-w-md md:max-w-2xl lg:max-w-xl border border-[#38B6FF]/30 rounded-[30px] p-8 md:p-12 bg-white/50 backdrop-blur-sm shadow-sm">
           
           <div className="space-y-6">
             {/* Basic Plan */}

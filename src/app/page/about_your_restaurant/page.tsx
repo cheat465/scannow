@@ -7,7 +7,7 @@ export default function AboutYourRestaurant() {
   return (
     <div className="bg-[#EFFFFF] ">
       <Navbar1 />
-      <div className="flex flex-col items-center justify-center mt-1 min-h-screen">  
+      <div className="relative z-10 flex flex-col items-center justify-center mt-1 min-h-screen">  
         <div className="w-full max-w-md bg-[#EFFFFF] rounded-lg shadow-[0_0_50px_-12px_rgba(0,0,0,0.25)] p-8 -translate-y-12">
           <h2 className="text-md font-bold font-sans text-center text-black mb-5 mb-[-100] mt-[-30]">
             About Your Restaurant
