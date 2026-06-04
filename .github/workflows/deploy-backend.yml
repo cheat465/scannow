@@ -1,0 +1,23 @@
+name: Deploy Backend to Heroku
+
+on:
+  push:
+    branches:
+      - main  # or your default branch name
+    paths:
+      - 'scannow_backend/**'  # Only deploy when backend files change
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Deploy to Heroku
+        uses: akhileshns/heroku-deploy@v3.12.12
+        with:
+          heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
+          heroku_app_name: ${{ secrets.HEROKU_APP_NAME }}
+          heroku_email: ${{ secrets.HEROKU_EMAIL }}
+          usedocker: false
+          appdir: 'scannow_backend'  # Path to your backend subdirectory

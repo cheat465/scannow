@@ -5,7 +5,6 @@ import { useRouter } from "next/navigation";
 import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
 import Link from "next/link";
-import { supabase } from "@/app/lib/supabase/client";
 
 export default function Login() {
   const router = useRouter();
@@ -17,30 +16,8 @@ export default function Login() {
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    setError(null);
-
-    try {
-      const { data, error: signInError } = await supabase.auth.signInWithPassword({
-        email,
-        password,
-      });
-
-      if (signInError) {
-        setError(signInError.message);
-        setLoading(false);
-        return;
-      }
-
-      if (data.user) {
-        // Redirect to dashboard or welcome page after successful login
-        router.push("/page/welcome/welcome_back");
-      }
-    } catch (err) {
-      setError("An unexpected error occurred");
-      console.error("Login error:", err);
-    } finally {
-      setLoading(false);
-    }
+    setError("Authentication is currently disabled.");
+    setLoading(false);
   };
 
   return (

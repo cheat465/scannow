@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
-import { supabase } from "@/app/lib/supabase/client";
 
 const RegisterPage: React.FC = () => {
   const router = useRouter();
@@ -19,54 +18,8 @@ const RegisterPage: React.FC = () => {
   const handleRegister = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    setError(null);
-    setSuccess(false);
-
-    // Validate passwords match
-    if (password !== confirmPassword) {
-      setError("Passwords do not match");
-      setLoading(false);
-      return;
-    }
-
-    // Validate password length
-    if (password.length < 6) {
-      setError("Password must be at least 6 characters long");
-      setLoading(false);
-      return;
-    }
-
-    try {
-      const { data, error: signUpError } = await supabase.auth.signUp({
-        email,
-        password,
-        options: {
-          data: {
-            full_name: fullName,
-          },
-          emailRedirectTo: `${window.location.origin}/auth/verify_email`,
-        },
-      });
-
-      if (signUpError) {
-        setError(signUpError.message);
-        setLoading(false);
-        return;
-      }
-
-      if (data.user) {
-        setSuccess(true);
-        // Redirect to email verification page
-        setTimeout(() => {
-          router.push("/auth/verify_email");
-        }, 2000);
-      }
-    } catch (err) {
-      setError("An unexpected error occurred");
-      console.error("Registration error:", err);
-    } finally {
-      setLoading(false);
-    }
+    setError("Registration is currently disabled.");
+    setLoading(false);
   };
 
   return (
